@@ -96,3 +96,86 @@
         }
     }
     ```
+    
+### 使用jdk自带的类实现观察者模式
+- 被观察者继承Observable
+- 观察者实现Observer
+- 在被观察这种添加观察者
+- 场景
+> 老师询问学生某道数学题有没有听懂，学生进行相应的回答
+- 实例
+    - 被观察者
+    ```
+    public class Teacher extends Observable {
+    
+        public void ask() {
+            Integer number = 10;
+            System.out.println("第" + number +  "道数学题大家都听懂了嘛？？？");
+            setChanged();
+            notifyObservers(number);
+        }
+    }
+
+    ```
+    - 观察者
+    ```
+    public class Student1 implements Observer {
+    
+        private Teacher teacher;
+    
+        public Student1(Teacher teacher) {
+            this.teacher = teacher;
+            this.teacher.addObserver(this);
+        }
+    
+        @Override
+        public void update(Observable o, Object arg) {
+            System.out.println("老师第" + arg + "道数学题我没有听懂？？？");
+        }
+    }
+    
+    public class Student2 implements Observer {
+    
+        private Teacher teacher;
+    
+        public Student2(Teacher teacher) {
+            this.teacher = teacher;
+            this.teacher.addObserver(this);
+        }
+    
+        @Override
+        public void update(Observable o, Object arg) {
+            System.out.println("老师第" + arg + "道数学题我听懂了。。。");
+        }
+    }
+    
+    public class Student3 implements Observer {
+    
+        private Teacher teacher;
+    
+        public Student3(Teacher teacher) {
+            this.teacher = teacher;
+            this.teacher.addObserver(this);
+        }
+    
+        @Override
+        public void update(Observable o, Object arg) {
+            System.out.println("老师第" + arg + "道数学题我也没有听懂？？？");
+        }
+    }
+    ```
+    - 测试
+    ```
+    public class Test {
+    
+        public static void main(String[] args) {
+            Teacher teacher = new Teacher();
+    
+            new Student1(teacher);
+            new Student2(teacher);
+            new Student3(teacher);
+    
+            teacher.ask();
+        }
+    }
+    ```
