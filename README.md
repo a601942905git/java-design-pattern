@@ -11,3 +11,4 @@
 - [组合模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/combine)
 - [适配器模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/adapter)
 - [外观模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/facade)
+- [命令模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/command)
