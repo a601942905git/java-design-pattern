@@ -7,3 +7,4 @@
 - [模板模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/template)
 - [状态模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/state)
 - [装饰器模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/decorator)
+- [代理模式](https://github.com/a601942905git/java-design-pattern/tree/master/src/main/java/com/design/pattern/proxy)
